@@ -1,0 +1,38 @@
+@use 'spacing' as *;
+
+// Layout containers
+.container {
+  width: 100%;
+  max-width: $container-xl;
+  margin: 0 auto;
+  padding: 0 $space-6;
+
+  @media (max-width: $container-md) {
+    padding: 0 $space-4;
+  }
+}
+
+// Grid utilities
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@mixin responsive-grid($min-width: 300px) {
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+}
+
+// Flex utilities
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+
+// Gap utilities
+.gap-4 { gap: $space-4; }
+.gap-6 { gap: $space-6; }
+.gap-8 { gap: $space-8; }
